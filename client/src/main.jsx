@@ -5,10 +5,12 @@ import './index.css'
 import {createHashRouter, RouterProvider} from "react-router-dom";
 import {Provider, useSelector} from 'react-redux';
 import store from './store/store';
-import { Home } from './Home.jsx';
-import { Login } from './Login.jsx';
-import { SignUp } from './SignUp.jsx';
 import { Api, ApiContext } from './utils/api.js';
+import { ArcadePage } from './pages/arcadePage.jsx';
+import { SignUpPage } from './pages/signUpPage.jsx';
+import { LoginPage } from './pages/loginPage.jsx';
+import { HomePage } from './pages/homePage.jsx';
+import { ProfilePage } from './pages/profilePage.jsx';
 
 const router = createHashRouter([
   {
@@ -17,16 +19,24 @@ const router = createHashRouter([
     children: [
       {
         path: "",
-        element: <Home />
+        element: <HomePage />
       },
       {
         path: "/login",
-        element: <Login />
+        element: <LoginPage />
       },
       {
         path: "/sign_up",
-        element: <SignUp />
+        element: <SignUpPage />
       },
+      {
+        path: "/arcade",
+        element: <ArcadePage />
+      },
+      {
+        path: "/profile",
+        element: <ProfilePage />
+      }
     ]
   }
 ])
