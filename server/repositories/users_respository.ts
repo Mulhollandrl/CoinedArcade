@@ -27,7 +27,7 @@ export class UsersRepository {
     return this.db.user.create({
       data: {
         email: email,
-        password_hash: bcrypt.hashSync(password),
+        passwordHash: bcrypt.hashSync(password),
         firstName: firstName,
         lastName: lastName,
         profile: {
@@ -36,6 +36,7 @@ export class UsersRepository {
       }
     });
   }
+
 
   async getUserById(id: number) {
     return this.db.user.findUnique({

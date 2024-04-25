@@ -1,0 +1,15 @@
+.gamePreview { 
+    background-color: brown;
+    padding: 25px;
+    margin: 10px;
+}
+
+.gamePreview * {
+    margin: 0px;
+    padding: 0px;
+}
+
+.gamePreview img {
+    height: 150px;
+    width: auto;
+}

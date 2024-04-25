@@ -11,6 +11,7 @@ import { SignUpPage } from './pages/signUpPage.jsx';
 import { LoginPage } from './pages/loginPage.jsx';
 import { HomePage } from './pages/homePage.jsx';
 import { ProfilePage } from './pages/profilePage.jsx';
+import { GamePage } from './pages/gamePage.jsx';
 
 const router = createHashRouter([
   {
@@ -36,6 +37,10 @@ const router = createHashRouter([
       {
         path: "/profile",
         element: <ProfilePage />
+      },
+      {
+        path: "/games/:gamename",
+        element: <GamePage />
       }
     ]
   }

@@ -14,7 +14,7 @@ export const buildSessionsController = (db: PrismaClient) => {
       }
     });
 
-    if (user && bcrypt.compareSync(req.body.password, user.password_hash)) {
+    if (user && bcrypt.compareSync(req.body.password, user.passwordHash)) {
       const token = jwt.sign({
         userId: user.id,
       }, process.env.ENCRYPTION_KEY as string);
