@@ -13,6 +13,7 @@ import { buildHomeController } from "./server/controllers/home_controller";
 import { UsersRepository } from "./server/repositories/users_respository";
 import { buildScoreController } from "./server/controllers/scores_controller";
 import { ScoresRepository } from "./server/repositories/scores_repository";
+import { buildGamesController } from "./server/controllers/games_controller";
 
 
 const db = new PrismaClient();
@@ -52,6 +53,7 @@ app.use("/", buildHomeController());
 app.use("/users", buildUsersController(usersRepository));
 app.use("/sessions", buildSessionsController(db));
 app.use("/scores", buildScoreController(scoresRepository))
+app.use("/games", buildGamesController())
 
 app.listen(process.env.PORT || 3000, () => {
   console.log(`Listening on port ${process.env.PORT || 3000}...`);

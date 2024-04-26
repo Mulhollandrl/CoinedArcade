@@ -32,12 +32,16 @@ const gameScripts = {
         "views/highscores.js",
         "views/home.js",
         "game.js",
+    ],
+    bbiy: [
+        "game.js"
     ]
 }
 
 export const GamePage = () => {
     const { gamename } = useParams();
     const mazeGame = gamename == "mazegame";
+    const bbiyGame = gamename == "bbiy";
     const [scriptLoaded, setScriptLoaded] = useState(false);
 
     useEffect(() => {
@@ -50,6 +54,9 @@ export const GamePage = () => {
             }
     
             const script = document.createElement('script');
+            if (bbiyGame){
+                script.type = 'module';
+            }
             script.src = `/games/${gamename}/scripts/${scriptPaths[index]}`;
             script.onload = () => loadScript(index + 1);
             document.body.appendChild(script);
