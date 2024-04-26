@@ -5,7 +5,7 @@ import { currentLevel, levels, controlsKeys, setCurrentLevel } from "../../state
 import { textSelect } from "../utilities/textSelect.js";
 
 export function levelsPage (windowWidth, windowHeight, context, resetGame){
-    let audio = new Audio("../../../assets/music/03 - Baby's Tears Blues.mp3");
+    let audio = new Audio("games/bbiy/assets/music/03 - Baby's Tears Blues.mp3");
     let backButton = button({y: windowHeight - (100), height: 50, text: "Back!"}, windowWidth, context);
     let levelsSelects = [];
     let levelStart = 125;
@@ -14,7 +14,7 @@ export function levelsPage (windowWidth, windowHeight, context, resetGame){
     audio.loop = true;
     
     // Get all of the levels from the levels files
-    fetch('http://localhost:3000/levels').then(response => response.json()).then(data => {
+    fetch('http://localhost:3000/games/bbiy/levels').then(response => response.json()).then(data => {
         for (const level of data) {
             levels.push(level);
         }

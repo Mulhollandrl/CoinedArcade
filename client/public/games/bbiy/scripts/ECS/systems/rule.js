@@ -3,7 +3,7 @@ import { Property } from "../components/Property.js";
 import * as entityHelpers from "../entityHelpers.js"
 import { mergeSets, cartesianProduct, filterSet } from "../../utilities/setutils.js";
 
-let winUnlock = new Audio("../../../assets/sounds/unlockWin.mp3")
+let winUnlock = new Audio("games/bbiy/assets/sounds/unlockWin.mp3")
 let soundPlayed = false;
 
 winUnlock.loop = false;
@@ -15,7 +15,7 @@ winUnlock.onended = function() {
 }
 
 function playSound() {
-    winUnlock = new Audio("../../../assets/sounds/unlockWin.mp3")
+    winUnlock = new Audio("games/bbiy/assets/sounds/unlockWin.mp3")
     winUnlock.play();
 
     winUnlock.onended = function() {
@@ -145,7 +145,7 @@ function ruleEffects(entityManager, rules) {
 
     for (const win of newWins.values()) {
         if (!oldWins.has(win)) {
-            console.log("DING!!")
+            // console.log("DING!!")
             playSound()
             break;
         }

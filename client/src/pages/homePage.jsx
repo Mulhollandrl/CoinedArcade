@@ -24,15 +24,13 @@ export const HomePage = () => {
     return (
       <div>
         <h3>This is the...</h3>
-        <h1>REPTILE TRACKER</h1>
+        <h1>Coined! Arcade</h1>
 
         <p>
-            This is the application for all things tracking reptiles! 
-            You can keep track of schedules, husbandry records, feedings, and more!
-            (Mine is the best and I should get the most points)
+            This is the application where I put all of my games from when I took Game Development (and more!).
         </p>
         {!user && <p>
-            It looks like you are currently signed out! Sign in or sign up now!
+            It looks like you are currently signed out! Sign in or sign up now to go to the arcade!
         </p>}
       </div>
     )

@@ -42,10 +42,11 @@ export const buildGamesController = () => {
     res.json(gamesAvailable)
   });
 
-  router.get("/levels", async (req, res) => {
+  router.get("/:gamename/levels", async (req, res) => {
     if (!levels) {
-        levels = await parseLevels("../bbiy_server/levels-all.bbiy")
+        levels = await parseLevels("./server/bbiy_server/levels/levels-all.bbiy")
     }
+    res.json(levels)
   });
 
   return router;

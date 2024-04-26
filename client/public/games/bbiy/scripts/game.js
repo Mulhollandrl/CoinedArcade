@@ -25,7 +25,7 @@ let GameScreen = gamePage(canvasWidth, canvasHeight, context, restartGame);
 
 export function restartGame() {
   GameScreen = gamePage(canvasWidth, canvasHeight, context, restartGame);
-  console.log("RESET");
+  // console.log("RESET");
 }
 
 let state = modesEnum.HOME;

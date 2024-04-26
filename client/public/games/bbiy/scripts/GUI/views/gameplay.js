@@ -13,31 +13,31 @@ export function gamePage (windowWidth, windowHeight, context, resetGame){
     let winText = `YOU WIN!! Press ${controlsKeys.data.leave} to go to levels!`;
     let winSoundPlayed = false;
     const randomSong = Math.floor(Math.random() * 7);
-    const winSound = new Audio("../../../assets/sounds/win.mp3")
+    const winSound = new Audio("games/bbiy/assets/sounds/win.mp3")
 
     audio.loop = true;
 
     switch (randomSong) {
         case 0:
-            audio.src = "../../../assets/music/02 - Symphony For A Spider Plant.mp3"
+            audio.src = "games/bbiy/assets/music/02 - Symphony For A Spider Plant.mp3"
             break;
         case 1:
-            audio.src = "../../../assets/music/04 - Ode To An African Violet.mp3"
+            audio.src = "games/bbiy/assets/music/04 - Ode To An African Violet.mp3"
             break;
         case 2:
-            audio.src = "../../../assets/music/05 - Concerto For Philodendron And Pothos.mp3"
+            audio.src = "games/bbiy/assets/music/05 - Concerto For Philodendron And Pothos.mp3"
             break;
         case 3:
-            audio.src = "../../../assets/music/06 - Rhapsody In Green.mp3"
+            audio.src = "games/bbiy/assets/music/06 - Rhapsody In Green.mp3"
             break;
         case 4:
-            audio.src = "../../../assets/music/07 - Swingin' Spathiphyllums.mp3"
+            audio.src = "games/bbiy/assets/music/07 - Swingin' Spathiphyllums.mp3"
             break;
         case 5:
-            audio.src = "../../../assets/music/08 - You Don't Have To Walk A Begonia.mp3"
+            audio.src = "games/bbiy/assets/music/08 - You Don't Have To Walk A Begonia.mp3"
             break;
         case 6:
-            audio.src = "../../../assets/music/09 - Mellow Mood For Maidenhair.mp3"
+            audio.src = "games/bbiy/assets/music/09 - Mellow Mood For Maidenhair.mp3"
             break;
         }
 

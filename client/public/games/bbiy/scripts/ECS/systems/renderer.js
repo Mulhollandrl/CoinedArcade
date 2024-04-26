@@ -26,7 +26,7 @@ export function handleRendering(entityManager, grid, changeSprite) {
         const position = animated.getComponent(componentTypesEnum.POSITION);
 
         const image = new Image();
-        image.src = spriteSheet;
+        image.src = `/games/bbiy/${spriteSheet}`;
 
         // It draws the sprite that is necessary on the spriteSheet. The reason it has the ones is because of the borders on the sprites...
         context.drawImage(image, 
