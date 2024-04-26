@@ -4,12 +4,12 @@ import { GamePreview } from "./components/gamePreview"
 export const ArcadePage = () => {
     const navigate = useNavigate();
     const gamesAvailable = {
-        "Maze Game" : {
-            name: "Amaizeing Maze!",
-            description: "A game where you try to solve the maze as fast as possible!",
-            imageLocation: "../../../public/maze.png",
-            gameUrl: "mazegame"
-        },
+        // "Maze Game" : {
+        //     name: "Amaizeing Maze!",
+        //     description: "A game where you try to solve the maze as fast as possible!",
+        //     imageLocation: "../../../public/maze.png",
+        //     gameUrl: "mazegame"
+        // },
         "Breakout" : {
             name: "Acne Breakout!",
             description: "A ripoff of Atari Breakout! Break all of the blocks to move on!",
