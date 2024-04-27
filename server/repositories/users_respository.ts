@@ -8,6 +8,19 @@ export type CreateUserPayload = {
   lastName: string,
 }
 
+export type UpdateUserPayload = {
+  userId: number,
+  firstName: string,
+  lastName: string
+}
+
+export type UpdateProfilePayload = {
+  profileId: number,
+  age: number,
+  profileImageURL: string,
+  description: string
+}
+
 export class UsersRepository {
   private db: PrismaClient
   private static instance: UsersRepository
@@ -44,5 +57,40 @@ export class UsersRepository {
         id: id
       },
     });
+  }
+
+  async updateUser({userId, firstName, lastName}: UpdateUserPayload) {
+    return this.db.user.update({
+      where: {
+        id: userId
+      },
+      data: {
+        firstName: firstName,
+        lastName: lastName
+      }
+    })
+  }
+
+  async getUserProfile(userId: number) {
+    return this.db.profile.findFirst({
+      where : {
+        user: {
+          id: userId
+        }
+      }
+    })
+  }
+
+  async updateUserProfile({profileId, age, profileImageURL, description}: UpdateProfilePayload) {
+    return this.db.profile.update({
+      where: {
+        id: profileId
+      },
+      data: {
+        age: age,
+        profileImageURL: profileImageURL,
+        description: description
+      }
+    })
   }
 }

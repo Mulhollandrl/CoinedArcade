@@ -1,0 +1,52 @@
+.userSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.profileSection {
+    display: flex;
+    flex-direction: column;   
+}
+
+.miniSection {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    margin-bottom: 25px;
+    margin-inline: 55px;
+}
+
+.miniSection label {
+    margin-left: 55px;
+    margin-right: 55px;
+}
+
+#description {
+    margin-bottom: 25px;
+}
+
+#description * {
+    vertical-align: middle;
+}
+
+#description textarea {
+    width: 35%;
+    height: 100%;
+}
+
+#update {
+    color: white;
+    background-color: green;
+    margin-right: 15px;
+}
+
+#reset {
+    color: white;
+    background-color: rgba(255, 0, 0, 0.726);
+    margin-left: 15px;
+}
+
+h4 {
+    margin: 5px;
+}
+
