@@ -25,7 +25,7 @@ export const ArcadePage = () => {
         "Big Blue Is You" : {
             name: "Big Blue Is You",
             description: "A ripoff of Baba Is You! Move the words to change the rules!",
-            imageLocation: "../../../public/maze.png",
+            imageLocation: "../../../public/bbiy.png",
             gameUrl: "bbiy"
         },
         "Tic Tac Toe" : {
