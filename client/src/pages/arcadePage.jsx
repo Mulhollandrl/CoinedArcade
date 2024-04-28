@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import { GamePreview } from "./components/gamePreview"
+import "./styles/ArcadePage.css"
 
 export const ArcadePage = () => {
     const navigate = useNavigate();
@@ -38,7 +39,7 @@ export const ArcadePage = () => {
 
     return (
         <div>
-            <h1>COINED! ARCADE</h1>
+            <h1>🎉 COINED! ARCADE 🎉</h1>
             <h2>Games Available:</h2>
   
             <div>

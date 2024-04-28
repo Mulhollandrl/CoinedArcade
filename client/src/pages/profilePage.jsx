@@ -94,6 +94,7 @@ export const ProfilePage = () => {
             {user != null &&
                 <div className="userSection">
                     <h2>Username/Email: {email}</h2>
+                    <img src={profile.profileImageURL} alt="Profile Picture"></img>
                     <div className="miniSection">
                         <label>User ID: <h4>{userId}</h4></label>
                         <label>Profile ID: <h4>{profileId}</h4></label>
@@ -123,13 +124,15 @@ export const ProfilePage = () => {
             <button type="button" onClick={() => setSeeingScores(true)} id="scoresButton">See Scores</button>
             
                 <Modal className="scoresModal" isOpen={seeingScores} onRequestClose={() => setSeeingScores(false)} contentLabel="Scores">
-                    <h2>Your Scores per Game</h2>
+                    <h2>Your Scores per Game:</h2>
                     {scores != undefined &&
                         <>
+                            <hr/>
                             <h4>Acne Breakout:</h4>
                             {scores.filter(score => score.game === 'Breakout').sort((a, b) => b.score - a.score).map(score => (
                                 <p key={score.id}>{score.score} points</p>
                             ))}
+                            <hr/>
                             <h4>Dodge-the-Tiles:</h4>
                             {scores.filter(score => score.game === 'Dodger').sort((a, b) => b.score - a.score).map(score => (
                                 <p key={score.id}>{score.score} seconds</p>

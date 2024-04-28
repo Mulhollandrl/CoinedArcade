@@ -53,20 +53,20 @@ function App() {
       {!loading && 
         <div>
           <nav className="my-nav">
-            <h2>Coined! Arcade</h2>
-            <Link id="arcadeLink" to="/arcade">Go To Arcade</Link>
+            <h2>🥇 Coined! Arcade</h2>
+            <Link className="sign_link" id="arcadeLink" to="/arcade">Go To Arcade</Link>
             {
               authToken === null ? (
                 <div id="notLoggedIn" className="appInfoSection">
-                  <Link to="/sign_up">Create Account</Link>
-                  <Link to="/login">Sign In</Link>
+                  <Link className="sign_link" to="/sign_up">Create Account</Link>
+                  <Link className="sign_link" to="/login">Sign In</Link>
                 </div>
               ) : (
                 <div className="appInfoSection" id="profileMini">
                   {/* https://i.pinimg.com/736x/01/c6/fe/01c6feefce5fe8dde74acfab66c030a0.jpg */}
                   {/* https://i.pinimg.com/originals/8b/16/0f/8b160fb127ad866c4fc6dc570b58d2c0.png */}
                   <img src={profile.profileImageURL || "https://i.pinimg.com/736x/01/c6/fe/01c6feefce5fe8dde74acfab66c030a0.jpg"} alt="Profile Picture"></img>
-                  <Link to="/profile">{user && user.firstName}</Link>
+                  <Link className="sign_link"  to="/profile">{user && user.firstName}</Link>
                   <a className="logout" onClick={logout}><h4>LOGOUT</h4></a>
                 </div>
               )

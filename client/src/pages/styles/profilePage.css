@@ -30,20 +30,27 @@
 }
 
 #description textarea {
-    width: 35%;
+    width: 45%;
     height: 100%;
+    background: #225322;
+    box-shadow: 0 0 10px #264626;
+    border: #225322;
 }
 
 #update {
     color: white;
     background-color: green;
     margin-right: 15px;
+    font-weight: bold;
+    box-shadow: 0 0 10px #264626;
 }
 
 #reset {
     color: white;
     background-color: rgba(255, 0, 0, 0.726);
     margin-left: 15px;
+    font-weight: bold;
+    box-shadow: 0 0 10px #264626;
 }
 
 h4 {
@@ -55,7 +62,7 @@ h4 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #352510;
+    background: #336333;
     border: 1px solid #ccc;
     padding: 80px;
     overflow: auto;
@@ -66,6 +73,8 @@ h4 {
     width: 50%;
     overflow-y: auto;
     max-height: 400px;
+    padding: 45px;
+    border-radius: 55px;
 }
 
 .scoresModalOverlay {
@@ -86,12 +95,60 @@ h4 {
     text-align: center;
     height: 100%;
     font-family: 'Courier New', Courier, monospace;
-    background-color: #352510;
+    background-color: #336333;
     overflow-y: auto;
 }
 
 .scoresModal * {
     align-items: center;
-    background-color: #352510;
+    background-color: #336333;
     overflow-y: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 15px #264626;
+}
+
+#scoresButton {
+    margin-top: 15px;
+    background-color: #225322;
+    width: 45%;
+    font-weight: bold;
+    box-shadow: 0 0 15px #264626;
+}
+
+form {
+    font-weight: bold;
+    color: gainsboro;
+    background-color: #396939;
+    padding: 15px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 10%;
+    margin-right: 10%;
+    box-shadow: inset 0 0 10px #264626;
+    border-radius: 105px;
+}
+
+form img {
+    width: 200px;
+    height: 200px;
+    align-self: center;
+    margin-bottom: 15px;
+    box-shadow: 0 0 15px #264626;
+}
+
+input {
+    background: #225322;
+    border: #225322;
+    box-shadow: 0 0 10px #264626;
+    text-shadow: 0 0 15px #264626;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+form * {
+    text-shadow: 0 0 15px #264626;
+}
+
+hr {
+    color: #264626;
 }

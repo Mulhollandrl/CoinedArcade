@@ -1,15 +1,26 @@
 .gamePreview { 
-    background-color: brown;
+    background-color: rgba(255, 216, 0, 0.780);
     padding: 25px;
     margin: 10px;
+    border: 3px solid gainsboro;
+    border-radius: 105px;
+    color: rgba(100, 84, 1, 0.78);
+    box-shadow: inset 0 0 10px rgba(46, 38, 1, 0.78);
 }
 
 .gamePreview * {
     margin: 0px;
     padding: 0px;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(52, 44, 0, 0.78);
 }
 
 .gamePreview img {
     height: 150px;
     width: auto;
+    box-shadow: 0 0 15px rgba(46, 38, 1, 0.78);
+}
+
+.gamePreview:hover {
+    cursor: pointer;
 }

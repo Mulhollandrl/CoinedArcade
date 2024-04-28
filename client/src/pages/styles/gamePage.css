@@ -1,0 +1,8 @@
+canvas {
+    border: 15px solid #000;
+    border-radius: 10px;
+    background-color: #000;
+    padding: 20px;
+    width: fit-content;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}

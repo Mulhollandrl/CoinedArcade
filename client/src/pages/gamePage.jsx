@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
+import "./styles/GamePage.css"
 
 const gameScripts = {
     mazegame: [
@@ -81,7 +82,7 @@ export const GamePage = () => {
             <table style={{width: "100%"}}>
                 <thead>
                     <tr>
-                        <th id="Header" colSpan="3">{gamename}</th>
+                        <br/>
                     </tr>
                 </thead>
                 <tbody>
