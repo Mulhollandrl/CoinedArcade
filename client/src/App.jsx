@@ -22,6 +22,7 @@ function App() {
 
   function logout() {
     dispatch(setAuthToken(null));
+    localStorage.setItem("userId", null)
   }
 
   
@@ -40,6 +41,8 @@ function App() {
   useEffect(() => {
     if (user == null) {
       getUser();
+    } else {
+      localStorage.setItem("userId", JSON.stringify(user.id))
     }
 
     getProfile();

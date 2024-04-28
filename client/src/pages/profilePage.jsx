@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import { requireLogin } from "../utils/require_login"
 import { useApi } from "../utils/use_api";
+import Modal from 'react-modal'
 import "./styles/ProfilePage.css"
+
+Modal.setAppElement('#root');
 
 export const ProfilePage = () => {
     requireLogin();
@@ -23,10 +26,19 @@ export const ProfilePage = () => {
     const [description, setDescription] = useState("");
     const [profileImageUrl, setProfileImageUrl] = useState("");
 
+    const [scores, setScores] = useState([]);
+    const [seeingScores, setSeeingScores] = useState(false);
+
     async function getProfile() {
         const {user, profile} = await api.get("/users/me/profile");
         setProfile(profile);
         setUser(user);
+    }
+
+    async function getScores() {
+        const response = await api.get(`/scores/user/${userId}`);
+        setScores(response.scoreList);
+        console.log(scores)
     }
 
     async function updateUserAndProfile() {
@@ -64,6 +76,19 @@ export const ProfilePage = () => {
         }
     }, [profile])
 
+    useEffect(() => {
+        if (userId != null && userId != "") {
+            getScores()
+        }
+    }, [userId])
+
+    useEffect(() => {
+        if (scores == null || scores == undefined) {
+            getScores()
+            console.log(scores)
+        }
+    }, [scores])
+
     return (
         <form onSubmit={updateUserAndProfile}>
             {user != null &&
@@ -93,7 +118,25 @@ export const ProfilePage = () => {
                 </div>
             }
             <button type="submit" id="update">Update</button>
-            <button onClick={getProfile} id="reset">Reload</button>
+            <button type="button" onClick={getProfile} id="reset">Reload</button>
+            <br/>
+            <button type="button" onClick={() => setSeeingScores(true)} id="scoresButton">See Scores</button>
+            
+                <Modal className="scoresModal" isOpen={seeingScores} onRequestClose={() => setSeeingScores(false)} contentLabel="Scores">
+                    <h2>Your Scores per Game</h2>
+                    {scores != undefined &&
+                        <>
+                            <h4>Acne Breakout:</h4>
+                            {scores.filter(score => score.game === 'Breakout').sort((a, b) => b.score - a.score).map(score => (
+                                <p key={score.id}>{score.score} points</p>
+                            ))}
+                            <h4>Dodge-the-Tiles:</h4>
+                            {scores.filter(score => score.game === 'Dodger').sort((a, b) => b.score - a.score).map(score => (
+                                <p key={score.id}>{score.score} seconds</p>
+                            ))}
+                        </>
+                    }
+                </Modal>
         </form>
     )
 }

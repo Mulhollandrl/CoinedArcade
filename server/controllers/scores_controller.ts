@@ -11,19 +11,21 @@ export const buildScoreController = (scoresRepository: ScoresRepository) => {
         res.json({ score })
     })
 
-    router.post("/:id", async (req, res) => {
+    router.post("/score/:id", async (req, res) => {
         const score = await scoresRepository.updateScore(req.body)
 
         res.json({ score })
     })
 
-    router.get("/:id", async (req, res) => {
+    router.get("/score/:id", async (req, res) => {
         const score = await scoresRepository.getScoreById(parseInt(req.params.id))
 
         res.json({ score })
     })
 
     router.get("/user/:id", async (req, res) => {
+        console.log("getting scores for user")
+        console.log(req.params.id)
         const scoreList = await scoresRepository.getScoreByUserId(parseInt(req.params.id))
 
         res.json({ scoreList })

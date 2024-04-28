@@ -210,6 +210,21 @@ function gameplayPage (windowWidth, windowHeight, context){
                 }
 
                 localStorage.setItem('Breakout.highscores', JSON.stringify(highscoresHere));
+            
+                fetch("http://localhost:3000/scores", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        userId: Number(localStorage.getItem("userId")),
+                        score: scorer.getScore(),
+                        game: "Breakout"
+                    }),
+                    headers: {
+                      "Content-type": "application/json; charset=UTF-8"
+                    }
+                })
+                .then(response => response.json())
+                .then(json => console.log(json));
+
                 savedScore = true;
             }
 
