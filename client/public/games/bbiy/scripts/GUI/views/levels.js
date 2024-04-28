@@ -5,13 +5,13 @@ import { currentLevel, levels, controlsKeys, setCurrentLevel } from "../../state
 import { textSelect } from "../utilities/textSelect.js";
 
 export function levelsPage (windowWidth, windowHeight, context, resetGame){
-    let audio = new Audio("games/bbiy/assets/music/03 - Baby's Tears Blues.mp3");
+    // let audio = new Audio("games/bbiy/assets/music/03 - Baby's Tears Blues.mp3");
     let backButton = button({y: windowHeight - (100), height: 50, text: "Back!"}, windowWidth, context);
     let levelsSelects = [];
     let levelStart = 125;
     let selectedButton = 0;
 
-    audio.loop = true;
+    // audio.loop = true;
     
     // Get all of the levels from the levels files
     fetch('http://localhost:3000/games/bbiy/levels').then(response => response.json()).then(data => {
@@ -20,8 +20,12 @@ export function levelsPage (windowWidth, windowHeight, context, resetGame){
         }
 
         for (const leveled in levels) {
-            levelsSelects.push(textSelect({y: levelStart, height: 50, text: data[leveled].name}, windowWidth, context));
-            levelStart += 50;
+            try {
+                levelsSelects.push(textSelect({y: levelStart, height: 50, text: data[leveled].name}, windowWidth, context));
+                levelStart += 50;
+            } catch {
+                
+            }
         }
     }).catch(error => console.error(error));
 
@@ -34,7 +38,7 @@ export function levelsPage (windowWidth, windowHeight, context, resetGame){
     }
 
     function processInput(keys) {
-        audio.play();
+        // audio.play();
 
         if (keys.hasOwnProperty(controlsKeys.data.down)) {
             selectedButton++;
@@ -57,7 +61,7 @@ export function levelsPage (windowWidth, windowHeight, context, resetGame){
         }
 
         if (keys.hasOwnProperty(controlsKeys.data.select)) {
-            audio.pause();
+            // audio.pause();
             delete keys[controlsKeys.data.select];
 
             if (selectedButton === 0) {

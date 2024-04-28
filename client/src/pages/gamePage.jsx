@@ -35,7 +35,8 @@ const gameScripts = {
         "game.js",
     ],
     bbiy: [
-        "game.js"
+        "game.js",
+        "inputs/Keyboard.js"
     ]
 }
 
@@ -82,7 +83,6 @@ export const GamePage = () => {
             <table style={{width: "100%"}}>
                 <thead>
                     <tr>
-                        <br/>
                     </tr>
                 </thead>
                 <tbody>

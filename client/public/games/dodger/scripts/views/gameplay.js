@@ -105,6 +105,7 @@ function gameplayPage (windowWidth, windowHeight, context){
             if (!savedScore) {
                 let highscoresHere = []
                 let previousScores = localStorage.getItem('Minigame.highscores')
+                let time = timed.getTime();
 
                 if (previousScores !== null) {
                     highscoresHere = JSON.parse(previousScores);
@@ -124,7 +125,7 @@ function gameplayPage (windowWidth, windowHeight, context){
                     method: "POST",
                     body: JSON.stringify({
                         userId: Number(localStorage.getItem("userId")),
-                        score: Number(timed.getTime()),
+                        score: Number(time),
                         game: "Dodger"
                     }),
                     headers: {

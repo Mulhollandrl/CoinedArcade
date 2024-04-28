@@ -1,7 +1,7 @@
 function gameplayPage (windowWidth, windowHeight, context){
     let background = new Image();
     let backgroundReady = false;
-    let audio = new Audio();
+    // let audio = new Audio();
     let player = paddle({}, windowWidth, windowHeight, context);
     let scorer = score(windowWidth, windowHeight, context);
     let exitButton = button({y: windowHeight - (100), height: 50, text: "Main Menu!"}, windowWidth, context);
@@ -14,7 +14,7 @@ function gameplayPage (windowWidth, windowHeight, context){
     let currentBrokenRows = 0;
     const randomSong = Math.floor(Math.random() * 3);
         
-    audio.loop = true;
+    // audio.loop = true;
 
     let bricks = [];
     let balls = [];
@@ -91,7 +91,7 @@ function gameplayPage (windowWidth, windowHeight, context){
             }
         } else {
             if (keys.hasOwnProperty('Enter')) {
-                audio.pause();
+                // audio.pause();
     
                 delete keys['Enter']
     
@@ -100,7 +100,7 @@ function gameplayPage (windowWidth, windowHeight, context){
         }
 
         if (keys.hasOwnProperty('Escape')) {
-            audio.pause();
+            // audio.pause();
 
             delete keys['Escape']
 
@@ -188,7 +188,7 @@ function gameplayPage (windowWidth, windowHeight, context){
             player.render();
             scorer.render();
             
-            audio.play();
+            // audio.play();
         } else {
             let deadText = "Yer dead!!";
             let scoreText = `Score: ${scorer.getScore()}`;

@@ -3,26 +3,26 @@ import { Property } from "../components/Property.js";
 import * as entityHelpers from "../entityHelpers.js"
 import { mergeSets, cartesianProduct, filterSet } from "../../utilities/setutils.js";
 
-let winUnlock = new Audio("games/bbiy/assets/sounds/unlockWin.mp3")
+// let winUnlock = new Audio("games/bbiy/assets/sounds/unlockWin.mp3")
 let soundPlayed = false;
 
-winUnlock.loop = false;
+// winUnlock.loop = false;
 
-winUnlock.onended = function() {
-    winUnlock = new Audio();
-    // winUnlock.currentTime = 0;
-    soundPlayed = true;
-}
+// winUnlock.onended = function() {
+//     // winUnlock = new Audio();
+//     // winUnlock.currentTime = 0;
+//     soundPlayed = true;
+// }
 
 function playSound() {
-    winUnlock = new Audio("games/bbiy/assets/sounds/unlockWin.mp3")
-    winUnlock.play();
+    // winUnlock = new Audio("games/bbiy/assets/sounds/unlockWin.mp3")
+    // winUnlock.play();
 
-    winUnlock.onended = function() {
-        winUnlock = new Audio();
-        // winUnlock.currentTime = 0;
-        soundPlayed = true;
-    }
+    // winUnlock.onended = function() {
+    //     // winUnlock = new Audio();
+    //     // winUnlock.currentTime = 0;
+    //     soundPlayed = true;
+    // }
 }
 
 const onlyText = entity => entityHelpers.hasAllComponents(entity, componentTypesEnum.TEXT)

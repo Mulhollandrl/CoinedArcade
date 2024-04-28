@@ -4,21 +4,21 @@ import { modesEnum } from "../../state/enums.js";
 import { controlsKeys } from "../../state/globals.js";
 
 export function homePage (windowWidth, windowHeight, context){
-    let audio = new Audio("games/bbiy/assets/music/01 - Plantasia.mp3")
+    // let audio = new Audio("games/bbiy/assets/music/01 - Plantasia.mp3")
     let creditsButton = button({y: 325, height: 50, text: "Credits!"}, windowWidth, context);
     let controlsButton = button({y: 225, height: 50, text: "Controls!"}, windowWidth, context);
     let newGameButton = button({y: 125, height: 50, text: "New Game!"}, windowWidth, context);
     let selectedButton = 0;
     let musicLoaded = false;
 
-    audio.loop = true;
+    // audio.loop = true;
 
     function processInput(keys) {
         if (musicLoaded) {
-            audio.play();
+            // audio.play();
         } else {
             if (Object.keys(keys)[0] !== undefined) {
-                audio.play();
+                // audio.play();
                 musicLoaded = true;
             }
         }
@@ -48,7 +48,7 @@ export function homePage (windowWidth, windowHeight, context){
 
             switch (selectedButton) {
                 case 0:
-                    audio.pause();
+                    // audio.pause();
                     return modesEnum.LEVELS;
                 case 1:
                     return modesEnum.CONTROLS;

@@ -1,5 +1,5 @@
 function homePage (windowWidth, windowHeight, context, restartGame){
-    let audio = new Audio("games/breakout/assets/main.mp3");
+    // let audio = new Audio("games/breakout/assets/main.mp3");
     let aboutButton = button({y: 425, height: 50, text: "About!"}, windowWidth, context);
     let helpButton = button({y: 325, height: 50, text: "Help!"}, windowWidth, context);
     let highscoresButton = button({y: 225, height: 50, text: "Highscores!"}, windowWidth, context);
@@ -7,7 +7,7 @@ function homePage (windowWidth, windowHeight, context, restartGame){
     let selectedButton = 0;
 
     // document.addEventListener("click", () => {audio.play()})
-    audio.loop = true;
+    // audio.loop = true;
 
     function processInput(keys) {
         if (keys.hasOwnProperty('s') || keys.hasOwnProperty('k') || keys.hasOwnProperty('ArrowDown')) {
@@ -36,7 +36,7 @@ function homePage (windowWidth, windowHeight, context, restartGame){
 
         if (keys.hasOwnProperty('Space') || keys.hasOwnProperty('Enter')) {
             if (selectedButton === 0) {
-                audio.pause();
+                // audio.pause();
                 restartGame();
             }
 
