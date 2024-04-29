@@ -32,7 +32,7 @@ export const ArcadePage = () => {
         "Tic Tac Toe" : {
             name: "Tic Tac Toe",
             description: "A game where you try to solve the maze as fast as possible!",
-            imageLocation: "../../../public/maze.png",
+            imageLocation: "../../../public/tictactoe.png",
             gameUrl: "tictactoe"
         }
     }

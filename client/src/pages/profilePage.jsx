@@ -94,7 +94,7 @@ export const ProfilePage = () => {
             {user != null &&
                 <div className="userSection">
                     <h2>Username/Email: {email}</h2>
-                    <img src={profile.profileImageURL} alt="Profile Picture"></img>
+                    <img src={profile.profileImageURL || "https://i.pinimg.com/736x/01/c6/fe/01c6feefce5fe8dde74acfab66c030a0.jpg"} alt="Profile Picture"></img>
                     <div className="miniSection">
                         <label>User ID: <h4>{userId}</h4></label>
                         <label>Profile ID: <h4>{profileId}</h4></label>

@@ -26,11 +26,13 @@ export const HomePage = () => {
         <h3>This is the...</h3>
         <h1>Coined! Arcade</h1>
 
+        <h1>🥇</h1>
+
         <p>
-            This is the application where I put all of my games from when I took Game Development (and more!).
+            Navigate to the arcade now, or sign in to save scores!
         </p>
         {!user && <p>
-            It looks like you are currently signed out! Sign in or sign up now to go to the arcade!
+            It looks like you are currently signed out! Sign in or sign up now to save your scores!
         </p>}
       </div>
     )

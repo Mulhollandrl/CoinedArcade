@@ -2,3 +2,11 @@ p {
     margin: 5%;
     font-weight: 550;
 }
+
+button {
+    margin-top: 15px;
+    background-color: #225322;
+    width: 45%;
+    font-weight: bold;
+    box-shadow: 0 0 15px #264626;
+}

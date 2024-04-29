@@ -42,6 +42,16 @@ export const buildGamesController = () => {
     res.json(gamesAvailable)
   });
 
+  router.get("/tictactoe/tictactoe.html", (req, res) => {
+    console.log(__dirname + "../client/public/games/tictactoe/index.html")
+    res.sendFile(__dirname + "../client/public/games/tictactoe/index.html")
+  })
+
+  router.get("/tictactoe/tictactoe.apk", (req, res) => {
+    console.log(__dirname + "../client/public/games/tictactoe/project_2.apk")
+    res.sendFile(__dirname + "../client/public/games/tictactoe/project_2.apk")
+  })
+
   router.get("/:gamename/levels", async (req, res) => {
     if (!levels) {
         levels = await parseLevels("./server/bbiy_server/levels/levels-all.bbiy")

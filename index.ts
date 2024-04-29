@@ -40,6 +40,7 @@ if (!DEBUG) {
   app.use(express.static('static'));
 } else {
   app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://pygame-web.github.io')
     if (req.url.includes(".")) {
       res.redirect(`${process.env.ASSET_URL}/${req.url}`)
     } else {
